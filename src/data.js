@@ -27,28 +27,28 @@ export const aboutData = [
 export const navbar = [
   {
     logo: "Portfolio",
-    path: "#",
+    path: "/",
   },
   {
     item: "Home",
-    path: "#home",
+    path: "/",
     class: "active",
   },
   {
     item: "About",
-    path: "#about",
+    path: "/about",
   },
   {
     item: "Services",
-    path: "#services",
+    path: "/services",
   },
   {
     item: "Project",
-    path: "#project",
+    path: "/project",
   },
   {
     item: "Contact",
-    path: "#contact",
+    path: "/contact",
   },
 ];
 
