@@ -2,10 +2,9 @@ import React from "react";
 import "./home.css";
 import { home } from "../../data";
 import homeImg from "../../assets/profile-pic.png";
-import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiIndeed } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
-import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 
 const Home = () => {

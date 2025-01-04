@@ -143,3 +143,59 @@ section {
     width: 100%;
   }
 }
+
+/* pages in custom css for jsx file */
+/* MyContact page  */
+
+.my-contact_page {
+  margin-top: 7rem;
+  display: grid;
+  gap: 9rem;
+}
+
+.contact-me, .address-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-me .contact-img img {
+  display: block;
+  width: 350px;
+  border-radius: 4px;
+}
+
+.contact-me .contact-info, .address-container .address-heading-text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: calc(0.5rem + 1vw);
+  font-size: 2.5rem;
+}
+
+.address-container .address-heading-text-div{
+  padding-right: 5rem;
+  width: 90%;
+}
+
+.my-contact_page h2 {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: var(--main-color);
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-info a {
+  color: var(--text-color);
+}
+
+.contact-links svg {
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+}
