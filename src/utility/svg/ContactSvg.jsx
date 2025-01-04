@@ -9,6 +9,7 @@ const ContactSvg = () => {
       width="1013.44925"
       height="610.28138"
       viewBox="0 0 1013.44925 610.28138"
+      className="contact-svg"
     >
       <title>message sent</title>
       <path
