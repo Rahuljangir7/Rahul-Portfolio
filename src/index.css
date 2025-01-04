@@ -153,7 +153,8 @@ section {
   gap: 9rem;
 }
 
-.contact-me, .address-container {
+.contact-me,
+.address-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -164,7 +165,8 @@ section {
   border-radius: 4px;
 }
 
-.contact-me .contact-info, .address-container .address-heading-text-div {
+.contact-me .contact-info,
+.address-container .address-heading-text-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +176,7 @@ section {
   font-size: 2.5rem;
 }
 
-.address-container .address-heading-text-div{
+.address-container .address-heading-text-div {
   padding-right: 5rem;
   width: 90%;
 }
@@ -194,8 +196,9 @@ section {
   color: var(--text-color);
 }
 
+/* don't change anything */
 .contact-links svg {
-  font-size: 2rem;
+  font-size: 4rem;
   padding: 10px;
   border-radius: 50%;
 }
