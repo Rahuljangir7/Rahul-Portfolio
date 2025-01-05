@@ -1,5 +1,5 @@
 import React from "react";
-import './contactsvg.css'
+import "./contactsvg.css";
 const ContactSvg = () => {
   return (
     <svg
@@ -31,7 +31,7 @@ const ContactSvg = () => {
         transform="translate(-93.27537 -144.85931)"
         fill="none"
         stroke="#430A58"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       ></path>
       <rect
         x="303.45419"
@@ -85,7 +85,7 @@ const ContactSvg = () => {
         y2="608.49156"
         fill="none"
         stroke="#430A58"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       ></line>
       <path
         d="M93.27537,630.2124c0,58.96027,36.98858,106.67017,82.69935,106.67017"

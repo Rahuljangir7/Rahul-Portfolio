@@ -11,16 +11,16 @@ const Home = () => {
   return (
     <section className="home" id="home">
       <div className="home-content">
-        {home.map((item) => {
+        {home.map((item, idx) => {
           return (
-            <>
+            <React.Fragment key={idx}>
               <h3>{item.intro}</h3>
               <h1>{item.name}</h1>
               <h3>
                 {item.subTitle} <span>{item.title}</span>
               </h3>
               <p>{item.desc} </p>
-            </>
+            </React.Fragment>
           );
         })}
 

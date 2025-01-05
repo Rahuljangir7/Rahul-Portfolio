@@ -1,69 +1,105 @@
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: var(--bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
-.logo{
-    color: var(--text-color);
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.logo {
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: rgba(240, 248, 255, 0.05);
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: inline-block;
 }
 
-.navbar a{
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    font-weight: 700;
+/* flip logo when hover the image  */
+.logo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo .image-container {
+  position: relative;
+  width: 60px; /* Adjust width as needed */
+  height: 40px;
+  perspective: 1000px; /* Adds 3D perspective for the flipping effect */
+}
+
+.logo .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back image when not flipped */
+  transition: transform 0.6s; /* Smooth flipping animation */
+}
+
+.logo .front {
+  transform: rotateY(0deg); /* Front image remains upright initially */
+}
+
+.logo .back {
+  transform: rotateY(180deg); /* Back image is flipped initially */
+}
+
+.logo .image-container:hover .front {
+  transform: rotateY(-180deg); /* Front image flips out */
+}
+
+.logo .image-container:hover .back {
+  transform: rotateY(0deg); /* Back image flips in */
+}
+
+/* End flip css on image  */
+
+.navbar a {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 700;
 }
 
 .navbar a:hover,
- .navbar a.me{
-    color: var(--main-color);
+.navbar a.me {
+  color: var(--main-color);
 }
 
-#menu-icon{
-    font-size: 3.6rem;
-    color: var(--text-color);
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+}
+
+@media (max-width: 786px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     display: none;
-}
+  }
 
-
-@media(max-width:768px){
-    
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
-    }
-    
-    .active{
-        display: block;
-    }
-    .navbar a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
+  .active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
 }

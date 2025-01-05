@@ -1,3 +1,12 @@
+/*
+  parent element of property
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: cent20er; 
+  */
+
 .logotext {
   width: 2rem;
   position: absolute;

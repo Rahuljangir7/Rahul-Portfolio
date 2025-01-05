@@ -4,16 +4,16 @@ import './contact.css'
 const Contact = () => {
   return (
     <>
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
+    <section className="contact" id="contact">
+      <h2 className="heading">Contact <span>Me</span></h2>
 
       <form action="">
-        <div class="input-box">
+        <div className="input-box">
           <input type="text" placeholder="Full Name" />
           <input type="Email" placeholder="Email Address" />
         </div>
 
-        <div class="input-box">
+        <div className="input-box">
           <input type="number" placeholder="Mobile Number" />
           <input type="text" placeholder="Email Subject" />
         </div>
@@ -24,7 +24,7 @@ const Contact = () => {
           rows="10"
           placeholder="Your Message"
         ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
+        <input type="submit" value="Send Message" className="btn" />
       </form>
     </section>
     </>

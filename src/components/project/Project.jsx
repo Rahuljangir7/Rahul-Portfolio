@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 
 const Project = () => {
   return (
-    <section class="portfolio" id="project">
-      <h2 class="heading">
+    <section className="portfolio" id="project">
+      <h2 className="heading">
         Latest <span>Projects</span>
       </h2>
-      <div class="portfolio-container">
-        {project.map((item) => {
+      <div className="portfolio-container">
+        {project.map((item, idx) => {
           return (
-            <div class="portfolio-box">
+            <div className="portfolio-box" key={idx}>
               <img src={item.image} alt="" />
-              <div class="portfolio-layer">
+              <div className="portfolio-layer">
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
                 <a

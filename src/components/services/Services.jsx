@@ -5,33 +5,24 @@ import { service } from "../../data";
 
 const Services = () => {
   return (
-    <>
-      <section class="services" id="services">
-        <h2 class="heading">
-          My <span>Services</span>
-        </h2>
-        <div class="services-container" >
-        
-       {
-        service.map(({title,desc,button,Link})=>{
-            return(
-                <>
-                <ServicesBox
-            title={title}
-            desc={desc}
-            btn={button}
-            link={Link}
+    <section className="services" id="services">
+      <h2 className="heading">
+        My <span>Services</span>
+      </h2>
+      <div className="services-container">
+        {service.map(({ title, desc, button, Link }, idx) => {
+          return (
+            <ServicesBox
+              key={idx}
+              title={title}
+              desc={desc}
+              btn={button}
+              link={Link}
             />
-          
-                </>
-            )
-        })
-       }
-          
-
-        </div>
-      </section>
-    </>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

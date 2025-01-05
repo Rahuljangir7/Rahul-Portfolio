@@ -4,14 +4,14 @@ import "./footer.css";
 const Footer = () => {
   return (
     <>
-      <footer class="footer">
-        <div class="footer-text">
+      <footer className="footer">
+        <div className="footer-text">
           <p>Copyright &copy; 2024 by @rahul_jangir | All Rights Reserved.</p>
         </div>
 
-        <div class="footer-iconTop">
+        <div className="footer-iconTop">
           <a href="#">
-            <i class="fa-solid fa-angle-up"></i>
+            <i className="fa-solid fa-angle-up"></i>
           </a>
         </div>
       </footer>
