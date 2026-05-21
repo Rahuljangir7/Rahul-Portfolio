@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Github, Linkedin, Mail, Instagram, Facebook } from 'lucide-react';
+import ViewCounter from './ViewCounter';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -101,6 +102,9 @@ const Footer = () => {
                 <Mail size={24} />
               </a>
             </div>
+            
+            {/* View Counter */}
+            <ViewCounter />
           </div>
         </div>
 

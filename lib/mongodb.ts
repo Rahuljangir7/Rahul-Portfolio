@@ -31,6 +31,7 @@ async function connectDB() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      family: 4, // Force IPv4 to fix querySrv DNS issues
       serverApi: {
         version: "1" as const,
         strict: true,
