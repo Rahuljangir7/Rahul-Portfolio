@@ -125,7 +125,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden bg-slate-950 text-slate-50`}
       >
         <CustomCursor />
         <div className="min-h-screen flex flex-col">

@@ -2,12 +2,6 @@ import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI && process.env.NODE_ENV !== "production") {
-  console.warn(
-    "Warning: MONGODB_URI is not defined. The app will run without a database connection.",
-  );
-}
-
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -37,6 +31,11 @@ async function connectDB() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      serverApi: {
+        version: "1" as const,
+        strict: true,
+        deprecationErrors: true,
+      }
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((connection) => {

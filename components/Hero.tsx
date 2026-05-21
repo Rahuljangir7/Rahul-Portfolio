@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-12 px-6 overflow-hidden">
+    <div className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-12 px-8 md:px-16 lg:px-24 overflow-hidden">
       {/* Ultra-subtle background gradients for premium feel */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-500/5 rounded-full blur-[150px] -z-10" />

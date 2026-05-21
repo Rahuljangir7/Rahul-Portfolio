@@ -40,7 +40,10 @@ export async function GET(request: NextRequest) {
     });
   } catch (error: any) {
     return NextResponse.json(
-      { status: "error", message: "Internal server error" },
+      {
+        status: "error",
+        message: error?.message || "Internal server error",
+      },
       { status: 500 },
     );
   }
@@ -110,10 +113,12 @@ export async function POST(request: NextRequest) {
     );
   } catch (error: any) {
     console.error("Contact form error:", error);
-    
+
     // Handle Mongoose validation errors gracefully
     if (error.name === "ValidationError") {
-      const messages = Object.values(error.errors).map((err: any) => err.message);
+      const messages = Object.values(error.errors).map(
+        (err: any) => err.message,
+      );
       return NextResponse.json(
         { status: "error", message: messages.join(", ") },
         { status: 400 },
@@ -121,7 +126,10 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { status: "error", message: "Internal server error" },
+      {
+        status: "error",
+        message: error?.message || "Internal server error",
+      },
       { status: 500 },
     );
   }
