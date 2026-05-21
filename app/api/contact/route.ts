@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import connectDB from "@/lib/mongodb";
 import Contact from "@/models/Contact";
 import { sanitizeInput, isValidEmail, checkRateLimit } from "@/lib/security";
@@ -102,6 +103,63 @@ export async function POST(request: NextRequest) {
       ipAddress: ip,
       userAgent: request.headers.get("user-agent")?.substring(0, 500),
     });
+
+    // Send emails using nodemailer
+    try {
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      // Email to Admin
+      const adminMailOptions = {
+        from: process.env.EMAIL_USER,
+        to: "dbrpjangir9977@gmail.com",
+        subject: `New Contact Submission from ${sanitizedData.name}: ${sanitizedData.subject}`,
+        html: `
+          <div style="font-family: sans-serif; padding: 20px;">
+            <h2>New Contact Request</h2>
+            <p><strong>Name:</strong> ${sanitizedData.name}</p>
+            <p><strong>Email:</strong> ${sanitizedData.email}</p>
+            <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
+            <hr />
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap;">${sanitizedData.message}</p>
+          </div>
+        `,
+      };
+
+      // Acknowledgment Email to User
+      const userMailOptions = {
+        from: process.env.EMAIL_USER,
+        to: sanitizedData.email,
+        subject: "Thank you for contacting Rahul Jangir!",
+        html: `
+          <div style="font-family: sans-serif; padding: 20px;">
+            <h3>Hello ${sanitizedData.name},</h3>
+            <p>Thank you for reaching out! I have received your message and will get back to you as soon as possible.</p>
+            <hr/>
+            <h4>Your Message Details:</h4>
+            <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
+            <p style="white-space: pre-wrap;">${sanitizedData.message}</p>
+            <br/>
+            <p>Best Regards,</p>
+            <p><strong>Rahul Jangir</strong></p>
+          </div>
+        `,
+      };
+
+      await Promise.all([
+        transporter.sendMail(adminMailOptions),
+        transporter.sendMail(userMailOptions),
+      ]);
+    } catch (emailError) {
+      console.error("Email sending failed:", emailError);
+      // We log the error but still return success for the contact creation
+    }
 
     return NextResponse.json(
       {
