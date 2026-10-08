@@ -1,41 +1,47 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const [cursorText, setCursorText] = useState("");
 
-  const mouseX = useSpring(0, { stiffness: 500, damping: 50 });
-  const mouseY = useSpring(0, { stiffness: 500, damping: 50 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
+    let raf = 0;
+    let x = 0;
+    let y = 0;
+
+    const render = () => {
+      raf = 0;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      x = e.clientX;
+      y = e.clientY;
+      if (!raf) raf = requestAnimationFrame(render);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (
+      const hovering = Boolean(
         target.tagName === "A" ||
-        target.tagName === "BUTTON" ||
-        target.closest("a") ||
-        target.closest("button")
-      ) {
-        setIsHovering(true);
-        setCursorText("</>");
-      } else {
-        setIsHovering(false);
-        setCursorText("");
-      }
+          target.tagName === "BUTTON" ||
+          target.closest("a") ||
+          target.closest("button")
+      );
+      setIsHovering((prev) => (prev === hovering ? prev : hovering));
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("mouseover", handleMouseOver, { passive: true });
 
     return () => {
+      if (raf) cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
     };
@@ -46,6 +52,9 @@ const CustomCursor = () => {
       <style jsx global>{`
         * {
           cursor: none !important;
+        }
+        .custom-cursor {
+          will-change: transform;
         }
         @media (max-width: 768px) {
           * {
@@ -72,9 +81,6 @@ const CustomCursor = () => {
           borderColor: isHovering ? "rgba(14, 165, 233, 0.5)" : "rgba(14, 165, 233, 1)",
         }}
       >
-        <span className="text-[8px] font-bold text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          {cursorText}
-        </span>
       </motion.div>
 
       {/* Inner Dot */}
@@ -105,7 +111,7 @@ const CustomCursor = () => {
           scale: isHovering ? 1 : 0.5,
         }}
       >
-        {cursorText}
+        {"</>"}
       </motion.div>
     </>
   );
