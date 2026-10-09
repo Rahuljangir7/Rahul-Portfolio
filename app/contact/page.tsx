@@ -54,9 +54,7 @@ const Contact = () => {
         setError(data.message || "Failed to send message");
       }
     } catch (err) {
-      setTimeout(() => {
-        setError("Network error. Please check your connection and try again.");
-      }, 3000);
+      setError("Network error. Please check your connection and try again.");
     } finally {
       setLoading(false);
     }

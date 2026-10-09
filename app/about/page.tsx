@@ -49,8 +49,8 @@ const About = () => {
   const highlights = [
     {
       icon: <Code2 size={32} />,
-      title: "2+ Years Experience",
-      description: "Full Stack Architecture & Development",
+      title: "CTO @ Zynetechs",
+      description: "Tech Leadership & Systems",
     },
     {
       icon: <Database size={32} />,
@@ -64,8 +64,8 @@ const About = () => {
     },
     {
       icon: <Zap size={32} />,
-      title: "SEO Optimized",
-      description: "High rankings and performance",
+      title: "3D & Performance",
+      description: "Three.js, WebGL & Next.js",
     },
   ];
 
@@ -97,7 +97,7 @@ const About = () => {
               About <span className="gradient-text">Rahul Jangir</span>
             </h1>
             <p className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed">
-              Full-Stack Web Developer | MERN, Next.js, PHP, Laravel | Ecommerce, LMS & Enterprise Solutions Expert
+              Chief Technology Officer at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a> | Full Stack Architect | MERN, Next.js, Cloud & Enterprise Solutions
             </p>
           </motion.div>
 
@@ -122,26 +122,16 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                   <p>
-                    Hi, I&apos;m a Full Stack Web Developer based in Jaipur, Rajasthan. I enjoy building things that
-                    work smoothly and look good. I work mostly with the MERN Stack (MongoDB, Express.js, React.js, Node.js) and have real experience
-                    handling both frontend and backend development.
+                    Hi, I&apos;m Rahul Jangir, a Full Stack Architect and the <strong>Chief Technology Officer (CTO) at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a></strong> based in Jaipur, Rajasthan.
                   </p>
                   <p>
-                    Over time, I&apos;ve worked on several practical projects — like admin
-                    dashboards, login systems, dynamic forms, and REST APIs. I like
-                    solving problems, writing clean code, and making sure the user has
-                    a good experience.
+                    At Zynetechs, I head our technology operations and product architecture, engineering high-speed Next.js web applications, e-commerce platforms, and scalable digital systems for businesses across India and globally.
                   </p>
                   <p>
-                    I&apos;ve worked both in teams and alone, and I always try to learn
-                    something new while making things better and more efficient. I
-                    believe in writing code that&apos;s easy to read and reuse, and I enjoy
-                    learning from real work, not just tutorials.
+                    With deep expertise in the MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, Laravel, and 3D web technologies (Three.js / WebGL), I architect solutions that combine robust backends with immersive visual experiences.
                   </p>
                   <p>
-                    Right now, I&apos;m focused on improving my backend skills and
-                    understanding system design better. I&apos;m open to opportunities where I can keep growing — full-time roles,
-                    internships, or freelance work. Let&apos;s connect and build something meaningful together.
+                    I focus on system design, performance optimization, and building resilient software architectures that scale effortlessly. Whether collaborating with businesses on digital transformation or engineering custom products, I bring technology and strategy together.
                   </p>
                 </div>
               </div>

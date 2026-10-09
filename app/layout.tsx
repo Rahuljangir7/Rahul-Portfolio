@@ -18,17 +18,21 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rahul Jangir | Full Stack Developer | MERN & Laravel Expert",
+    default: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
     template: "%s | Rahul Jangir",
   },
   description:
-    "Portfolio of Rahul Jangir, a Full Stack Developer based in Jaipur specializing in the MERN Stack, React Native, PHP, and Laravel. Expert in Ecommerce and Enterprise Solutions.",
+    "Portfolio of Rahul Jangir, Chief Technology Officer (CTO) at Zynetechs and Full Stack Architect based in Jaipur. Specializing in MERN Stack, Next.js, Three.js, enterprise e-commerce, and high-performance digital systems.",
   keywords: [
     "Rahul Jangir",
+    "Rahul Jangir CTO",
+    "CTO Zynetechs",
+    "Zynetechs Jaipur",
+    "Full Stack Architect",
     "Full Stack Developer Jaipur",
     "MERN Stack Developer",
-    "React Native Developer",
-    "Laravel Expert",
+    "Next.js Developer",
+    "Three.js 3D Web Developer",
     "Ecommerce Web Developer",
     "Freelance Web Developer India",
     "SEO Expert",
@@ -49,9 +53,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rahuljangir.zynetechs.com",
-    title: "Rahul Jangir | Full Stack Developer",
+    title: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
     description:
-      "Portfolio of Rahul Jangir, a Full Stack Developer specializing in the MERN Stack, React Native, PHP, and Laravel.",
+      "Portfolio of Rahul Jangir, Chief Technology Officer at Zynetechs and Full Stack Architect specializing in MERN Stack, Next.js, Three.js, and enterprise systems.",
     siteName: "Rahul Jangir Portfolio",
     images: [
       {
@@ -64,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Jangir | Full Stack Developer",
+    title: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
     description:
-      "Portfolio of Rahul Jangir, a Full Stack Developer specializing in the MERN Stack.",
+      "Portfolio of Rahul Jangir, Chief Technology Officer at Zynetechs and Full Stack Architect.",
     images: ["/og-image.jpg"],
     creator: "@rahuljangir7",
   },
@@ -105,8 +109,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Rahul Jangir",
-              "url": "https://rahuljangir.dev",
-              "jobTitle": "Full Stack Developer",
+              "url": "https://rahuljangir.zynetechs.com",
+              "jobTitle": "Chief Technology Officer (CTO)",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Zynetechs",
+                "url": "https://zynetechs.com"
+              },
               "sameAs": [
                 "https://github.com/Rahuljangir7",
                 "https://www.linkedin.com/in/rahuljangir143/",
@@ -114,11 +123,14 @@ export default function RootLayout({
                 "https://www.facebook.com/profile.php?id=61578464571304"
               ],
               "knowsAbout": [
-                "Full Stack Development",
+                "Technical Leadership",
+                "Full Stack Architecture",
                 "3D Web Design",
                 "React",
                 "Next.js",
-                "Three.js"
+                "Three.js",
+                "Node.js",
+                "Cloud Systems"
               ]
             }),
           }}

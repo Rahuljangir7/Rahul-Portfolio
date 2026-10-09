@@ -29,7 +29,7 @@ const Hero = () => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                 </div>
                 <span className="uppercase tracking-[0.3em] text-xs font-semibold text-slate-400">
-                  Available for opportunities
+                  CTO @ Zynetechs · Open to Collaborations
                 </span>
               </div>
 
@@ -43,7 +43,7 @@ const Hero = () => {
               </h1>
 
               <p className="text-lg md:text-xl text-slate-400 max-w-xl font-light leading-relaxed mb-14">
-                I&apos;m <span className="text-white font-medium">Rahul Jangir</span>. A Full Stack Architect specializing in robust backends and immersive 3D interfaces that define the next generation of the web.
+                I&apos;m <span className="text-white font-medium">Rahul Jangir</span>. Chief Technology Officer at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4 transition-colors">Zynetechs</a> & Full Stack Architect specializing in scalable architectures, high-performance web systems, and immersive 3D interfaces.
               </p>
 
               {/* Minimalist Premium CTAs */}

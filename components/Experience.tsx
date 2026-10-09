@@ -1,10 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Calendar, GraduationCap } from "lucide-react";
+import { Briefcase, Calendar, GraduationCap, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
+    {
+      title: "Chief Technology Officer (CTO)",
+      company: "Zynetechs",
+      companyUrl: "https://zynetechs.com",
+      duration: "2024 - Present",
+      description: "Direct engineering operations, technology roadmap, and product excellence. Architect complex high-speed Next.js platforms, scalable e-commerce systems, and full-stack digital solutions for businesses across India and worldwide.",
+      icon: <Briefcase className="w-6 h-6" />,
+      type: "work"
+    },
     {
       title: "Full Stack Developer",
       company: "Freelance",
@@ -88,7 +97,19 @@ const Experience = () => {
                       </span>
                     </div>
                     <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                    <p className="text-primary-400 font-medium mb-3">{exp.company}</p>
+                    {exp.companyUrl ? (
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-primary-400 hover:text-primary-300 font-medium mb-3 transition-colors group/link"
+                      >
+                        <span>{exp.company}</span>
+                        <ExternalLink size={13} className="opacity-70 group-hover/link:opacity-100 transition-opacity" />
+                      </a>
+                    ) : (
+                      <p className="text-primary-400 font-medium mb-3">{exp.company}</p>
+                    )}
                     <p className="text-slate-400 text-sm leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
