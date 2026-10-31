@@ -7,25 +7,25 @@ const Process = () => {
   const steps = [
     {
       title: "Discover",
-      description: "Deep dive into goals and target audience.",
+      description: "Free call to understand your goals, audience and budget.",
       icon: <MessageSquare size={32} />,
       color: "from-blue-500 to-cyan-500"
     },
     {
       title: "Architect",
-      description: "Designing scalable and future-proof systems.",
+      description: "Clear scope, fixed quote, timeline and scalable architecture.",
       icon: <Terminal size={32} />,
       color: "from-purple-500 to-indigo-500"
     },
     {
       title: "Execute",
-      description: "Precision coding with a focus on performance.",
+      description: "Design & development with regular updates and demos.",
       icon: <Coffee size={32} />,
       color: "from-orange-500 to-rose-500"
     },
     {
       title: "Deploy",
-      description: "Launching masterpieces to the digital world.",
+      description: "Launch, SEO setup, handover and post-launch support.",
       icon: <Rocket size={32} />,
       color: "from-emerald-500 to-teal-500"
     }
@@ -41,9 +41,9 @@ const Process = () => {
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Creative <span className="gradient-text">Workflow</span>
+            How I Work <span className="gradient-text">With Clients</span>
           </h2>
-          <p className="text-slate-400">The methodology behind every successful project.</p>
+          <p className="text-slate-400">A simple 4-step process from your first message to a live website.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">

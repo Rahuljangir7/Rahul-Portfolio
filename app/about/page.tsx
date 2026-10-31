@@ -97,7 +97,7 @@ const About = () => {
               About <span className="gradient-text">Rahul Jangir</span>
             </h1>
             <p className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed">
-              Chief Technology Officer at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a> | Full Stack Architect | MERN, Next.js, Cloud & Enterprise Solutions
+              Freelance Full Stack Developer | MERN, Next.js &amp; E-commerce | CTO at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a>
             </p>
           </motion.div>
 
@@ -122,10 +122,10 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                   <p>
-                    Hi, I&apos;m Rahul Jangir, a Full Stack Architect and the <strong>Chief Technology Officer (CTO) at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a></strong> based in Jaipur, Rajasthan.
+                    Hi, I&apos;m Rahul Jangir, a <strong>freelance full stack web developer</strong> based in Jaipur, Rajasthan. Before any title, I&apos;m a developer and freelancer at heart — I take client projects directly, so you work one-to-one with the person building your product.
                   </p>
                   <p>
-                    At Zynetechs, I head our technology operations and product architecture, engineering high-speed Next.js web applications, e-commerce platforms, and scalable digital systems for businesses across India and globally.
+                    I&apos;m also the <strong>Chief Technology Officer (CTO) at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4">Zynetechs</a></strong>, where I lead technology and product architecture — engineering high-speed Next.js web applications, e-commerce platforms and scalable systems for businesses across India and globally. That experience goes into every freelance project I deliver.
                   </p>
                   <p>
                     With deep expertise in the MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, Laravel, and 3D web technologies (Three.js / WebGL), I architect solutions that combine robust backends with immersive visual experiences.

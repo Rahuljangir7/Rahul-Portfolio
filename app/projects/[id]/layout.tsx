@@ -16,8 +16,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   return {
-    title: project.title,
-    description: project.description,
+    title: `${project.title} – ${project.shortDescription}`,
+    description: `${project.description} Built by freelance full stack developer Rahul Jangir with ${project.technologies.join(", ")}.`,
+    alternates: { canonical: `/projects/${project._id}` },
     openGraph: {
       title: `${project.title} | Rahul Jangir`,
       description: project.description,

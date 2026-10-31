@@ -29,30 +29,30 @@ const Hero = () => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                 </div>
                 <span className="uppercase tracking-[0.3em] text-xs font-semibold text-slate-400">
-                  CTO @ Zynetechs · Open to Collaborations
+                  Available for Freelance Projects · CTO @ Zynetechs
                 </span>
               </div>
 
               {/* Massive, Highly-Controlled Headline */}
               <h1 className="text-2xl md:text-5xl lg:text-[3.5rem] font-display font-medium tracking-tight leading-[1.05] mb-8">
-                <span className="text-white block">Crafting </span>
-                <span className="text-slate-500 font-light italic block my-2">Exceptional</span>
+                <span className="text-white block">Freelance Full Stack</span>
+                <span className="text-slate-500 font-light italic block my-2">Web Developer</span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-white to-slate-400 block">
-                  Digital Experiences.
+                  for Your Next Project.
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-400 max-w-xl font-light leading-relaxed mb-14">
-                I&apos;m <span className="text-white font-medium">Rahul Jangir</span>. Chief Technology Officer at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4 transition-colors">Zynetechs</a> & Full Stack Architect specializing in scalable architectures, high-performance web systems, and immersive 3D interfaces.
+                I&apos;m <span className="text-white font-medium">Rahul Jangir</span>, a freelance full stack developer from Jaipur, India. Hire me directly to build fast, SEO-friendly websites, e-commerce stores and custom web apps with React, Next.js &amp; the MERN stack — one-to-one, no middleman. I&apos;m also CTO at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-medium underline decoration-primary-500/40 underline-offset-4 transition-colors">Zynetechs</a>.
               </p>
 
               {/* Minimalist Premium CTAs */}
               <div className="flex flex-wrap items-center gap-8 md:gap-12">
                 <Link
-                  href="/projects"
+                  href="/contact"
                   className="group relative flex items-center gap-2 text-white uppercase tracking-[0.2em] text-xs font-bold pb-2"
                 >
-                  <span>Explore Work</span>
+                  <span>Hire Me for a Project</span>
                   <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   {/* Underline Animation */}
                   <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20"></span>
@@ -60,10 +60,10 @@ const Hero = () => {
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/projects"
                   className="group relative flex items-center gap-2 text-slate-400 hover:text-white uppercase tracking-[0.2em] text-xs font-bold pb-2 transition-colors duration-300"
                 >
-                  <span>Let&apos;s Talk</span>
+                  <span>View My Work</span>
                   {/* Underline Animation */}
                   <span className="absolute bottom-0 left-0 w-full h-[1px] bg-transparent"></span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500 ease-out"></span>
@@ -103,7 +103,7 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 mix-blend-multiply" />
                     <Image
                       src="/rahul.png"
-                      alt="Rahul Jangir"
+                      alt="Rahul Jangir – freelance full stack web developer in Jaipur, India"
                       fill
                       className="object-cover object-center filter grayscale-[20%] contrast-110"
                       priority
@@ -121,7 +121,7 @@ const Hero = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
                   </div>
-                  <span className="text-xs font-semibold tracking-wider text-slate-200">ACTIVE NOW</span>
+                  <span className="text-xs font-semibold tracking-wider text-slate-200">OPEN FOR WORK</span>
                 </motion.div>
 
                 {/* Floating Icons */}

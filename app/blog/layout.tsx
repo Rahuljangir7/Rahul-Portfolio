@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog – Web Development Tips & Experiences",
   description:
-    "Read the latest articles on Web Development, 3D Components, Database mastery, and Soft Skills by Rahul Jangir.",
+    "Articles on web development, 3D web components, databases and freelancing by Rahul Jangir, freelance full stack developer.",
+  keywords: ["web development blog", "freelance developer blog", "Next.js tips"],
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog – Web Development Tips & Experiences",
+    description: "Articles on web development, 3D web components, databases and freelancing by Rahul Jangir, freelance full stack developer.",
+    url: "/blog",
+  },
 };
 
 export default function BlogLayout({

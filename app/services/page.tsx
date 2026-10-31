@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import { Code2, MonitorSmartphone, Rocket, Search, Globe, Database } from "lucide-react";
 import Link from "next/link";
+import FAQ from "@/components/FAQ";
+import { SERVICE_FAQS } from "@/lib/seo";
 
 const services = [
   {
     icon: <Code2 size={40} />,
-    title: "Custom Web Development",
+    title: "Custom Website & Web App Development",
     description: "Building fast, scalable, and secure custom web applications tailored to your specific business needs using React, Next.js, and Node.js.",
     color: "from-blue-500/20 to-cyan-500/20",
     border: "group-hover:border-blue-500/50",
@@ -31,7 +33,7 @@ const services = [
   },
   {
     icon: <Database size={40} />,
-    title: "E-Commerce Solutions",
+    title: "E-commerce Website Development",
     description: "Developing robust e-commerce platforms with secure payment gateways, inventory management, and fast checkout flows.",
     color: "from-orange-500/20 to-amber-500/20",
     border: "group-hover:border-orange-500/50",
@@ -39,7 +41,7 @@ const services = [
   },
   {
     icon: <Search size={40} />,
-    title: "SEO & Performance",
+    title: "SEO & Website Speed Optimization",
     description: "Optimizing your website's architecture, metadata, and load speeds to rank higher on search engines and convert more visitors.",
     color: "from-rose-500/20 to-red-500/20",
     border: "group-hover:border-rose-500/50",
@@ -47,8 +49,8 @@ const services = [
   },
   {
     icon: <Rocket size={40} />,
-    title: "Application Scaling",
-    description: "Refactoring and scaling existing applications to handle massive traffic spikes and large databases efficiently.",
+    title: "Redesign, Maintenance & Scaling",
+    description: "Redesigning outdated websites, fixing bugs, adding features and scaling existing applications to handle more traffic and data.",
     color: "from-indigo-500/20 to-blue-500/20",
     border: "group-hover:border-indigo-500/50",
     glow: "group-hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
@@ -71,13 +73,13 @@ const ServicesPage = () => {
           className="text-center mb-24"
         >
           <div className="inline-block mb-4 px-6 py-2 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-medium backdrop-blur-sm">
-            What I Do Best
+            Hire a Freelance Developer
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
-            Digital <span className="gradient-text">Services</span>
+            Freelance Web Development <span className="gradient-text">Services</span>
           </h1>
           <p className="text-slate-400 text-xl max-w-2xl mx-auto leading-relaxed">
-            I offer a comprehensive suite of digital services designed to elevate your brand and drive business growth through technology.
+            From business websites to e-commerce stores and custom web apps — hire me directly for end-to-end development, SEO and support.
           </p>
         </motion.div>
 
@@ -107,12 +109,17 @@ const ServicesPage = () => {
           ))}
         </div>
 
+        <FAQ
+          faqs={SERVICE_FAQS}
+          subtitle="Common questions about hiring me for freelance development work."
+        />
+
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 glass p-16 rounded-[3rem] text-center relative overflow-hidden group border border-white/5 hover:border-primary-500/30 transition-colors duration-500"
+          className="mt-16 glass p-16 rounded-[3rem] text-center relative overflow-hidden group border border-white/5 hover:border-primary-500/30 transition-colors duration-500"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
@@ -125,7 +132,7 @@ const ServicesPage = () => {
             href="/contact"
             className="btn-primary px-12 py-5 text-xl inline-flex"
           >
-            Start a Conversation
+            Get a Free Quote
           </Link>
         </motion.div>
       </div>

@@ -117,11 +117,11 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Get In <span className="gradient-text">Touch</span>
+              Hire Me for Your <span className="gradient-text">Project</span>
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? I&apos;d love to
-              hear from you.
+              Need a website, e-commerce store or web app? Share your requirement and
+              I&apos;ll reply within 24 hours with a plan and a free quote.
             </p>
           </motion.div>
 

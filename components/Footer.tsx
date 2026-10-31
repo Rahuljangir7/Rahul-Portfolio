@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-display font-bold gradient-text mb-4">Rahul Jangir</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Chief Technology Officer at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline">Zynetechs</a> & Full Stack Architect specializing in scalable architectures and 3D web experiences.
+              Freelance full stack web developer in Jaipur, India — available for websites, e-commerce and web app projects worldwide. Also CTO at <a href="https://zynetechs.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline">Zynetechs</a>.
             </p>
           </div>
 

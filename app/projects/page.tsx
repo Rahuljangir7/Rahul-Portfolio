@@ -161,10 +161,10 @@ const Projects = () => {
             className="text-center mb-16 pt-10"
           >
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
-              My <span className="gradient-text">Masterpieces</span>
+              Client <span className="gradient-text">Projects</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
-              A collection of high-performance web applications and immersive digital experiences.
+              Websites, e-commerce stores and web applications I&apos;ve built for clients as a freelance full stack developer.
             </p>
           </motion.div>
 

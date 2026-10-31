@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingActionButtons from "@/components/FloatingActionButtons";
+import { PRIMARY_KEYWORDS, SITE_NAME, SITE_URL, siteJsonLd } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,28 +17,20 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
+const TITLE = "Rahul Jangir | Freelance Full Stack Web Developer in Jaipur, India – Hire Me";
+const DESCRIPTION =
+  "Hire Rahul Jangir, a freelance full stack web developer in Jaipur, India (and CTO at Zynetechs). I build fast, SEO-friendly websites, e-commerce stores and custom web apps with React, Next.js & MERN for clients worldwide. Get a free quote.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
+    default: TITLE,
     template: "%s | Rahul Jangir",
   },
-  description:
-    "Portfolio of Rahul Jangir, Chief Technology Officer (CTO) at Zynetechs and Full Stack Architect based in Jaipur. Specializing in MERN Stack, Next.js, Three.js, enterprise e-commerce, and high-performance digital systems.",
-  keywords: [
-    "Rahul Jangir",
-    "Rahul Jangir CTO",
-    "CTO Zynetechs",
-    "Zynetechs Jaipur",
-    "Full Stack Architect",
-    "Full Stack Developer Jaipur",
-    "MERN Stack Developer",
-    "Next.js Developer",
-    "Three.js 3D Web Developer",
-    "Ecommerce Web Developer",
-    "Freelance Web Developer India",
-    "SEO Expert",
-  ],
-  authors: [{ name: "Rahul Jangir", url: "https://rahuljangir.zynetechs.com" }],
+  description: DESCRIPTION,
+  keywords: PRIMARY_KEYWORDS,
+  applicationName: "Rahul Jangir Portfolio",
+  category: "technology",
+  authors: [{ name: "Rahul Jangir", url: SITE_URL }],
   creator: "Rahul Jangir",
   publisher: "Rahul Jangir",
   formatDetection: {
@@ -45,33 +38,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://rahuljangir.zynetechs.com"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://rahuljangir.zynetechs.com",
-    title: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
-    description:
-      "Portfolio of Rahul Jangir, Chief Technology Officer at Zynetechs and Full Stack Architect specializing in MERN Stack, Next.js, Three.js, and enterprise systems.",
-    siteName: "Rahul Jangir Portfolio",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Rahul Jangir Portfolio Preview",
-      },
-    ],
+    locale: "en_IN",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: SITE_NAME,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Jangir | CTO at Zynetechs | Full Stack Architect",
-    description:
-      "Portfolio of Rahul Jangir, Chief Technology Officer at Zynetechs and Full Stack Architect.",
-    images: ["/og-image.jpg"],
+    title: TITLE,
+    description: DESCRIPTION,
     creator: "@rahuljangir7",
   },
   icons: {
@@ -92,6 +74,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Paste the token from Google Search Console here (or set the env var) to verify ownership.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -100,39 +86,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Rahul Jangir",
-              "url": "https://rahuljangir.zynetechs.com",
-              "jobTitle": "Chief Technology Officer (CTO)",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Zynetechs",
-                "url": "https://zynetechs.com"
-              },
-              "sameAs": [
-                "https://github.com/Rahuljangir7",
-                "https://www.linkedin.com/in/rahuljangir143/",
-                "https://www.instagram.com/rahul.jangir_143/",
-                "https://www.facebook.com/profile.php?id=61578464571304"
-              ],
-              "knowsAbout": [
-                "Technical Leadership",
-                "Full Stack Architecture",
-                "3D Web Design",
-                "React",
-                "Next.js",
-                "Three.js",
-                "Node.js",
-                "Cloud Systems"
-              ]
-            }),
+            __html: JSON.stringify(siteJsonLd),
           }}
         />
       </head>
