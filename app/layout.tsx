@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingActionButtons from "@/components/FloatingActionButtons";
+import AIChatbot from "@/components/AIChatbot";
 import { PRIMARY_KEYWORDS, SITE_NAME, SITE_URL, siteJsonLd } from "@/lib/seo";
 
 const inter = Inter({
@@ -104,6 +105,7 @@ export default function RootLayout({
           <main className="min-h-screen relative z-10">{children}</main>
           <Footer />
           <FloatingActionButtons />
+          <AIChatbot />
         </div>
       </body>
     </html>
