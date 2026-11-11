@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Code2, Database, Sparkles } from "lucide-react";
 import Image from "next/image";
@@ -8,25 +5,26 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-12 px-8 md:px-16 lg:px-24 overflow-hidden">
-      {/* Ultra-subtle background gradients for premium feel */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-500/5 rounded-full blur-[150px] -z-10" />
+      {/* Ultra-subtle radial ambient glow (no heavy CSS filter blur) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(600px circle at 85% 15%, rgba(14, 165, 233, 0.08), transparent 70%), radial-gradient(500px circle at 10% 85%, rgba(100, 116, 139, 0.08), transparent 70%)",
+        }}
+      />
 
       <div className="container mx-auto max-w-7xl relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
           
-          {/* Left Content - Pure Typography & Whitespace */}
+          {/* Left Content - Immediate LCP visibility, zero blocking motion delay */}
           <div className="flex-1 max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            >
+            <div>
               {/* Premium Status Indicator */}
               <div className="flex items-center gap-4 mb-10">
                 <div className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 shadow-[0_0_8px_rgba(14,165,233,0.9)]"></span>
                 </div>
                 <span className="uppercase tracking-[0.3em] text-xs font-semibold text-slate-400">
                   Available for Freelance Projects · CTO @ Zynetechs
@@ -80,73 +78,63 @@ const Hero = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500 ease-out"></span>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Content - Pure, Clean Image */}
           <div className="flex-1 flex justify-center lg:justify-end items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative"
-            >
-              {/* Very subtle glow behind the image */}
-              <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-[80px] -z-10 mix-blend-screen" />
+            <div className="relative">
+              {/* Radial glow behind the image (GPU-free compared to blur-[80px]) */}
+              <div
+                aria-hidden="true"
+                className="absolute -inset-12 -z-10 pointer-events-none"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(14, 165, 233, 0) 68%)",
+                }}
+              />
               
               <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px]">
                 
                 {/* Image Container with Glow/Border */}
-                <div className="absolute inset-0 rounded-full overflow-hidden border border-white/20 shadow-[0_0_50px_rgba(14,165,233,0.15)] group-hover:border-primary-500/50 transition-colors duration-700 p-2 bg-white/5 backdrop-blur-sm">
+                <div className="absolute inset-0 rounded-full overflow-hidden border border-white/20 shadow-[0_0_50px_rgba(14,165,233,0.15)] hover:border-primary-500/50 transition-colors duration-500 p-2 bg-white/5">
                   <div className="w-full h-full rounded-full overflow-hidden relative">
                     {/* A dark overlay gradient to blend the image perfectly with the dark theme */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 pointer-events-none" />
                     <Image
-                      src="/rahul.png"
+                      src="/rahul.webp"
                       alt="Rahul Jangir – freelance full stack web developer in Jaipur, India"
                       fill
+                      sizes="(max-width: 768px) 280px, (max-width: 1024px) 400px, 450px"
                       className="object-cover object-center filter grayscale-[20%] contrast-110"
                       priority
                     />
                   </div>
                 </div>
 
-                {/* Floating "Active Now" Badge */}
-                <motion.div 
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-4 -left-4 md:bottom-10 md:-left-8 glass rounded-full px-4 py-2 flex items-center gap-2 border border-white/10 shadow-xl z-20 backdrop-blur-md"
-                >
+                {/* Floating "Active Now" Badge (Pure CSS compositor float) */}
+                <div className="animate-float-slow absolute bottom-4 -left-4 md:bottom-10 md:-left-8 glass rounded-full px-4 py-2 flex items-center gap-2 border border-white/10 shadow-xl z-20">
                   <div className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
                   </div>
                   <span className="text-xs font-semibold tracking-wider text-slate-200">OPEN FOR WORK</span>
-                </motion.div>
+                </div>
 
-                {/* Floating Icons */}
-                <motion.div 
-                  animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute top-10 -right-4 md:top-16 md:-right-6 w-12 h-12 md:w-16 md:h-16 glass rounded-2xl flex items-center justify-center text-primary-400 border border-white/10 shadow-lg z-20"
-                >
+                {/* Floating Icons (Pure CSS compositor floats) */}
+                <div className="animate-float-tilt absolute top-10 -right-4 md:top-16 md:-right-6 w-12 h-12 md:w-16 md:h-16 glass rounded-2xl flex items-center justify-center text-primary-400 border border-white/10 shadow-lg z-20">
                   <Code2 size={24} className="md:w-8 md:h-8" />
-                </motion.div>
+                </div>
 
-                <motion.div 
-                  animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-20 -right-2 md:bottom-28 md:-right-4 w-10 h-10 md:w-14 md:h-14 glass rounded-full flex items-center justify-center text-accent-400 border border-white/10 shadow-lg z-20"
-                >
+                <div className="animate-float-tilt-reverse absolute bottom-20 -right-2 md:bottom-28 md:-right-4 w-10 h-10 md:w-14 md:h-14 glass rounded-full flex items-center justify-center text-accent-400 border border-white/10 shadow-lg z-20">
                   <Database size={20} className="md:w-6 md:h-6" />
-                </motion.div>
+                </div>
                 
                 {/* Sparkle Decorative */}
-                <div className="absolute top-4 left-10 md:top-8 md:left-16 text-gold-400 animate-pulse z-20">
+                <div className="absolute top-4 left-10 md:top-8 md:left-16 text-gold-400 z-20">
                   <Sparkles size={24} />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
         </div>

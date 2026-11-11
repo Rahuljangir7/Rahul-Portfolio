@@ -28,15 +28,15 @@
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply bg-slate-900/55 backdrop-blur-sm border border-white/10;
   }
 
   .glass-dark {
-    @apply bg-black/30 backdrop-blur-xl border border-white/5;
+    @apply bg-slate-950/80 backdrop-blur-md border border-white/5;
   }
 
   .glass-gold {
-    @apply bg-gold-500/10 backdrop-blur-lg border border-gold-500/20;
+    @apply bg-gold-500/10 backdrop-blur-sm border border-gold-500/20;
   }
 
   .gradient-text {
@@ -136,4 +136,75 @@
 
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
+}
+
+/* Compositor-only hero float & marquee animations (zero JS overhead) */
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes floatYTilt {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(4deg);
+  }
+}
+
+@keyframes floatYTiltReverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes marqueeLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-float-slow {
+  animation: floatY 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-tilt {
+  animation: floatYTilt 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-tilt-reverse {
+  animation: floatYTiltReverse 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-marquee {
+  animation: marqueeLoop 36s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-tilt,
+  .animate-float-tilt-reverse,
+  .animate-marquee,
+  .animate-glow,
+  .animate-shimmer {
+    animation: none !important;
+  }
 }

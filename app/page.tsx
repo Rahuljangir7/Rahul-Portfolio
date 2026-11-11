@@ -1,16 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Code2, ShoppingCart, Palette, Search, Download, UserCheck, Clock, BadgeCheck, Globe2 } from "lucide-react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
+import { ArrowRight, Code2, ShoppingCart, Palette, Search, UserCheck, Clock, BadgeCheck, Globe2 } from "lucide-react";
 
-const Background3D = dynamic(() => import("@/components/Background3D"), {
-  ssr: false,
-  loading: () => null,
-});
-
+import Background3DLoader from "@/components/Background3DLoader";
 import Process from "@/components/Process";
 import BentoSkills from "@/components/BentoSkills";
 import SkillLogos3D from "@/components/SkillLogos3D";
@@ -68,7 +59,7 @@ const Home = () => {
 
   return (
     <>
-      <Background3D />
+      <Background3DLoader />
 
       <Hero />
 
@@ -89,18 +80,11 @@ const Home = () => {
                 Looking to hire a web developer for your project? Here&apos;s what I can build for you.
               </p>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 md:mt-12"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 md:mt-12">
               {features.map((feature, index) => (
-                <motion.div
+                <div
                   key={index}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="glass p-8 rounded-2xl text-center relative group overflow-hidden"
+                  className="glass p-8 rounded-2xl text-center relative group overflow-hidden hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="text-primary-400 mb-6 flex justify-center transform group-hover:scale-110 transition-transform">
@@ -108,9 +92,9 @@ const Home = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
             <div className="text-center mt-10">
               <Link href="/services" className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-medium">
@@ -152,13 +136,8 @@ const Home = () => {
 
             {/* Final CTA Section */}
             <section className="pt-[10px] pb-[5px] md:py-16">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="glass px-6 py-10 md:p-16 rounded-[2rem] md:rounded-[3rem] text-center relative overflow-hidden group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="glass px-6 py-10 md:p-16 rounded-[2rem] md:rounded-[3rem] text-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 md:mb-8 leading-tight">
                   Have a Project? <br />
                   <span className="gradient-text">Let&apos;s Build It Together.</span>
@@ -173,7 +152,7 @@ const Home = () => {
                 >
                   Get a Free Quote
                 </Link>
-              </motion.div>
+              </div>
           </section>
         </div>
       </div>

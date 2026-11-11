@@ -53,9 +53,10 @@ const BentoSkills = () => {
     <section className="py-12 md:py-16 bg-brand-darker/50">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
@@ -68,14 +69,20 @@ const BentoSkills = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
               whileHover={{ y: -5 }}
               className={`${skill.size} glass p-8 rounded-[2rem] flex flex-col justify-between group overflow-hidden relative`}
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-current opacity-[0.03] blur-3xl -mr-16 -mt-16 group-hover:opacity-[0.08] transition-opacity ${skill.color.split(' ')[1]}`} />
+              <div
+                aria-hidden="true"
+                className={`pointer-events-none absolute top-0 right-0 w-36 h-36 opacity-[0.06] group-hover:opacity-[0.14] transition-opacity ${skill.color.split(' ')[1]}`}
+                style={{
+                  background: "radial-gradient(circle at top right, currentColor, transparent 70%)",
+                }}
+              />
               
               <div className={`p-4 rounded-2xl w-fit mb-6 ${skill.color}`}>
                 {skill.icon}

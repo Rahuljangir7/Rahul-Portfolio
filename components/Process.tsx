@@ -35,9 +35,10 @@ const Process = () => {
     <section className="py-12 md:py-16 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
@@ -53,10 +54,10 @@ const Process = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.35, delay: index * 0.06 }}
               className="text-center group"
             >
               <div className="relative mb-8 flex justify-center">

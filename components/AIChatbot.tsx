@@ -15,7 +15,12 @@ import {
   Copy,
   Check
 } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+import dynamic from "next/dynamic";
+
+const ReactMarkdown = dynamic(() => import("react-markdown"), {
+  ssr: false,
+  loading: () => <span className="opacity-70">...</span>,
+});
 
 interface Message {
   role: "user" | "assistant";
@@ -190,8 +195,8 @@ const AIChatbot = () => {
           className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-tr from-primary-600 via-primary-500 to-accent-500 text-white flex items-center justify-center shadow-[0_0_25px_rgba(14,165,233,0.5)] border border-white/20 group focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           aria-label="Toggle AI Assistant"
         >
-          {/* Active Ping Glow */}
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-25" />
+          {/* Subtle Outer Glow Ring */}
+          <span className="pointer-events-none absolute -inset-0.5 rounded-full ring-2 ring-primary-400/25" />
 
           {isOpen ? (
             <X size={24} className="transition-transform group-hover:rotate-90" />

@@ -74,8 +74,14 @@ const About = () => {
       {/* Background is cleanly removed for better 3D visibility */}
       <div className="relative min-h-screen pt-32 pb-16 px-6 overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-500/5 rounded-full blur-[120px] -z-10" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(500px circle at 90% 10%, rgba(14, 165, 233, 0.08), transparent 70%), radial-gradient(500px circle at 10% 90%, rgba(217, 70, 239, 0.08), transparent 70%)",
+          }}
+        />
 
         <div className="container mx-auto max-w-6xl">
           {/* Header Section */}

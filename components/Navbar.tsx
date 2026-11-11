@@ -23,9 +23,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const next = window.scrollY > 50;
+      setScrolled((prev) => (prev === next ? prev : next));
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -45,6 +47,7 @@ const Navbar = () => {
                 src="/logo.png"
                 alt="Rahul Jangir Logo"
                 fill
+                sizes="40px"
                 className="object-cover"
               />
             </div>
