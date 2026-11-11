@@ -29,6 +29,39 @@ const SUGGESTED_PROMPTS = [
   "How can I hire Rahul or collaborate?"
 ];
 
+const AIChatIcon = () => (
+  <svg
+    viewBox="0 0 28 28"
+    className="w-7 h-7 md:w-8 md:h-8 group-hover:scale-105 transition-transform"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    {/* Chat Bubble Silhouette with Tail */}
+    <path
+      d="M14 4C8.477 4 4 8.029 4 13c0 2.088.786 4.01 2.11 5.545-.25 1.384-.952 2.66-1.855 3.606a.45.45 0 0 0 .35.758c1.908-.1 3.748-.788 5.14-1.694A11.12 11.12 0 0 0 14 22c5.523 0 10-4.029 10-9s-4.477-9-10-9Z"
+      fill="#FFFFFF"
+    />
+    {/* Sleek AI Robot Visor */}
+    <rect x="8.25" y="9.75" width="11.5" height="6.5" rx="3.25" fill="#0F172A" />
+    {/* Glowing AI Eyes */}
+    <circle cx="11.6" cy="12.9" r="1.15" fill="#38BDF8" />
+    <circle cx="16.4" cy="12.9" r="1.15" fill="#38BDF8" />
+    {/* Subtle Friendly AI Smile */}
+    <path
+      d="M12.6 14.85c.45.35 2.35.35 2.8 0"
+      stroke="#7DD3FC"
+      strokeWidth="1.15"
+      strokeLinecap="round"
+    />
+    {/* AI Magic 4-Point Sparkle */}
+    <path
+      d="M23.2 2.2l.65 1.85 1.85.65-1.85.65-.65 1.85-.65-1.85-1.85-.65 1.85-.65.65-1.85Z"
+      fill="#FDE047"
+    />
+  </svg>
+);
+
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -148,8 +181,8 @@ const AIChatbot = () => {
 
   return (
     <>
-      {/* Floating Toggle Button */}
-      <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-[120]">
+      {/* Floating Toggle Button (Bottom-Right) */}
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[120]">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -163,13 +196,7 @@ const AIChatbot = () => {
           {isOpen ? (
             <X size={24} className="transition-transform group-hover:rotate-90" />
           ) : (
-            <div className="relative">
-              <Bot size={26} className="md:w-7 md:h-7" />
-              <Sparkles
-                size={14}
-                className="absolute -top-1 -right-1 text-gold-300 animate-pulse"
-              />
-            </div>
+            <AIChatIcon />
           )}
 
           {/* Floating Pill Badge when closed */}
